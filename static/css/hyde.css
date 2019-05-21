@@ -126,6 +126,14 @@ a.sidebar-nav-item:focus {
   font-weight: bold;
 }
 
+/* Container for the notch */
+@supports(padding: max(0px)) {
+  .container {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    /*padding-right: max(1rem, env(safe-area-inset-right));*/
+  }
+}
+
 /* Sticky sidebar
  *
  * Add the `sidebar-sticky` class to the sidebar's container to affix it the
