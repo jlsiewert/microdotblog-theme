@@ -39,7 +39,7 @@ html {
     font-size: 16px;
   }
 }
-@media (min-width: 58em) {
+@media (min-width: 58em, min-height: 35em) {
   html {
     font-size: 20px;
   }
@@ -69,6 +69,26 @@ html {
     text-align: left;
   }
 }
+@media (max-width: 48em) {
+  .sidebar {
+    font-size: em;
+  }
+  .sidebar .sidebar-about h1 {
+    font-size: 2em;
+  }
+  .sidebar .lead {
+    font-size: 1em;
+  }
+}
+
+@media (max-height: 35em) {
+  .sidebar .sidebar-about h1 {
+    font-size: 1.5em;
+  }
+  .sidebar .lead {
+    font-size: 1em;
+  }
+}
 
 /* Sidebar links */
 .sidebar a {
@@ -79,8 +99,15 @@ html {
 .sidebar-about h1 {
   color: var(--sidebar-link-color);
   margin-top: 0;
-  font-family: "Abril Fatface", serif;
+  /*font-family: "Abril Fatface", serif;*/
   font-size: 3.25rem;
+}
+
+/* Sidebar avatar */
+.sidebar .avatar {
+  margin-right: auto;
+  margin-left: auto;
+  max-height: 6em;
 }
 
 /* Sidebar nav */
