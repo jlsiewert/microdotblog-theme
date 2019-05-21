@@ -10,13 +10,13 @@
     </div>
 
     <nav class="sidebar-nav">
-    {{ if .IsHome }}
-      {{ else }}
-        <a class="sidebar-nav-item" href="/">Home</a>
-       {{ end }}
+      <a class="sidebar-nav-item{{ if .IsHome }} active{{end}}" href="/">Home</a>
     {{ range .Site.Menus.main }}
       {{ if .Page.Params.redirect_url }}
-        <a class="sidebar-nav-item" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
+        <a class="sidebar-nav-item
+        {{ if .Page.IsMenuCurrent "main" . }} 
+         active
+        {{end}}" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
       {{ else }}
         <a class="sidebar-nav-item" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
         <!-- <a href="" class="sidebar-nav-item active"></a> -->
