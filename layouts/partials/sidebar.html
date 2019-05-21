@@ -2,24 +2,28 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about h-card">
       <h1>
-        <a href="/">
-          <span class="p-name">{{ .Site.Title }}</a>
-        </a>
+          <span class="p-name">{{ .Site.Title }}
       </h1>
+      <p class="info">{{ .Site.Params.info | safeHTML }} </p>
+      <img class="avatar" alt="Avatar" src="{{ .Site.Author.avatar | safeURL }}">
       <p class="lead">{{ .Site.Params.description | safeHTML }}</p>
     </div>
 
     <nav class="sidebar-nav">
-
-		{{ range .Site.Menus.main }}
-			{{ if .Page.Params.redirect_url }}
-				<a class="sidebar-nav-item" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
-			{{ else }}
-				<a class="sidebar-nav-item" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
-				<!-- <a href="" class="sidebar-nav-item active"></a> -->
-			{{ end }}
-		{{ end }}
-		
+    {{ if .IsHome }}
+      {{ else }}
+        <a class="sidebar-nav-item" href="/">Home</a>
+       {{ end }}
+    {{ range .Site.Menus.main }}
+      {{ if .Page.Params.redirect_url }}
+        <a class="sidebar-nav-item" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
+      {{ else }}
+        <a class="sidebar-nav-item" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
+        <!-- <a href="" class="sidebar-nav-item active"></a> -->
+      {{ end }}
+    {{ end }}
+    
     </nav>
   </div>
 </div>
+
