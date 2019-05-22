@@ -3,17 +3,18 @@
 {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 25) }}
 {{ range $paginator.Pages  }}
 
-  <div class="post">
-    <a href="{{ .Permalink }}" class="post-date u-url"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "2 January 2006" }}</time></a>
+  <div class="microblog">
+    <a href="{{ .Permalink }}" class="microblog-date u-url"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "2 January 2006" }}</time></a>
+  {{ if not .Truncated }}
   {{ if .Title }}
     <h1 class="page-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
   {{ end }}
   <div class="e-content">
     {{ .Summary }}
-    {{ if .Truncated }}
-      <p class="link more"><a class="more" href="{{ .RelPermalink }}">Read More</a></p>
-    {{ end }}
   </div>
+  {{ else }}
+  <a href="{{ .Permalink }}">{{ .Title }} - {{ .Site.Title }}</a>
+  {{ end }}
   </div>
 
 {{ end }}
