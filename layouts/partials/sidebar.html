@@ -9,28 +9,26 @@
       <p class="lead">{{ .Site.Params.description | safeHTML }}</p>
     </div>
 
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{{ if .IsHome }} active{{end}}" href="/">Home</a>
-    {{ $currentPage := .Page }}
-    {{ range .Site.Taxonomies.categories }}
-    {{ $url := $currentPage.RelPermalink }}
-    <a class="sidebar-nav-item category
-    {{ if eq $url .Page.RelPermalink }}
-    active
-    {{ end }}
-    " href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a>
-    {{ end }}
+<nav class="sidebar-nav">
+   <a class="sidebar-nav-item{{ if .IsHome }} active{{end}}" href="/">Home</a>
+    {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
       {{ if .Page.Params.redirect_url }}
-        <a class="sidebar-nav-item
-        {{ if .Page.IsMenuCurrent "main" . }} 
-         active
+        <a class="sidebar-nav-item custom 
+        {{- if .Page.IsMenuCurrent "main" . -}} 
+          active
         {{end}}" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
       {{ else }}
-        <a class="sidebar-nav-item" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
+        {{ $url := .URL | relLangURL }}
+          <a class="sidebar-nav-item {{ $currentPage.RelPermalink }} {{ $url }}
+        {{ if ( eq ( add $url "") ( add ( $currentPage.URL | relLangURL | safeURL ) "" ) )  or ( $currentPage.IsMenuCurrent "main" . ) }}
+        active
+        {{ end }}
+        " href="{{ $url }}">{{ .Name }}</a>
         <!-- <a href="" class="sidebar-nav-item active"></a> -->
       {{ end }}
     {{ end }}
+    
     </nav>
   </div>
 </div>
