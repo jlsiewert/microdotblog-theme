@@ -1,0 +1,9 @@
+{{ define "main" }}
+<ul class="categories h-feed">
+{{ $paginator := .Paginate .Data.Pages }}
+{{ range $paginator.Pages  }}
+    <li class="page-title"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+{{ end }}
+
+</ul>
+{{ end }}
