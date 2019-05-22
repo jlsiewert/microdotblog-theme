@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="posts h-feed">
-{{ $pages := first (index .Site.Params "archive-paginate" | default 10) .Data.Pages.ByDate.Reverse  }}
-{{ partial "microlist" $pages }}
+{{ $pages := first (index .Site.Params "archive-paginate" | default 10) $.Site.Taxonomies.categories.blog.Pages.ByDate.Reverse  }}
+{{ partial "summarylist" $pages }}
 </div>
 {{ end }}
