@@ -353,6 +353,14 @@ tbody tr:nth-child(odd) th {
   color: var(--light-text-color);
 }
 
+/* Date for microblog posts */
+.microblog-date {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  color: var(--light-text-color);
+}
+
 /* Related posts */
 .related {
   padding-top: 2rem;
