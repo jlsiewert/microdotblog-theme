@@ -10,20 +10,15 @@
     </div>
 
     <nav class="sidebar-nav">
-    {{ $currentPage := . }}
+      <a class="sidebar-nav-item{{ if .IsHome }} active{{end}}" href="/">Home</a>
     {{ range .Site.Menus.main }}
-      {{ if ( .Page ) and ( .Page.Params ) and .Page.Params.redirect_url }}
-        <a class="sidebar-nav-item 
-        {{- if .Page.IsMenuCurrent "main" . -}} 
+      {{ if .Page.Params.redirect_url }}
+        <a class="sidebar-nav-item
+        {{ if .Page.IsMenuCurrent "main" . }} 
          active
         {{end}}" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
       {{ else }}
-        {{ $url := .URL | relLangURL }}
-        <a class="sidebar-nav-item {{ $currentPage.RelPermalink }} {{ eq $url $currentPage.RelPermalink }} {{ $url }} {{ $currentPage.RelPermalink }}
-        {{ if eq ( add $url "") ( add $currentPage.RelPermalink "" ) }}
-        active
-        {{ end }}
-        " href="{{ $url }}">{{ .Name }}</a>
+        <a class="sidebar-nav-item" href="{{ .URL | relLangURL | safeURL }}">{{ .Name }}</a>
         <!-- <a href="" class="sidebar-nav-item active"></a> -->
       {{ end }}
     {{ end }}
