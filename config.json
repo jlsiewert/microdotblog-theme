@@ -1,12 +1,2 @@
 {
-    "menu": {
-        "main": [
-            {
-                "identifier": "home",
-                "name": "Home",
-                "redirect_url": "/",
-                "weight": -150
-            }
-        ]
-    }
 }
