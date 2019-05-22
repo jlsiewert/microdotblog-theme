@@ -4,8 +4,14 @@
             {
                 "identifier": "home",
                 "name": "Home",
-                "redirect_url": "/",
+                "url": "/",
                 "weight": -150
+            },
+            {
+                "identifier": "posts",
+                "name": "Microblog",
+                "url": "/post/",
+                "weight": -140
             }
         ]
     }
