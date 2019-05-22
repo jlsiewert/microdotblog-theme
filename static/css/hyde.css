@@ -176,6 +176,13 @@ a.sidebar-nav-item:focus {
   }
 }
 
+/* Read more link */
+
+.content p.link.more {
+  margin-left: 2em;
+  margin-top: 0.5em;
+}
+
 
 /*
  * Reverse layout
