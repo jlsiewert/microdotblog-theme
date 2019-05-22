@@ -19,7 +19,7 @@
         {{end}}" href="{{ .Page.Params.redirect_url }}">{{ .Name }}</a>
       {{ else }}
         {{ $url := .URL | relLangURL }}
-        <a class="sidebar-nav-item {{ $currentPage.RelPermalink }} {{ eq $url $currentPage.RelPermalink }} {{ $url }} {{ $currentPage.RelPermalink }}
+        <a class="sidebar-nav-item
         {{ if eq ( add $url "") ( add $currentPage.RelPermalink "" ) }}
         active
         {{ end }}
