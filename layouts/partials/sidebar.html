@@ -22,7 +22,15 @@
         <!-- <a href="" class="sidebar-nav-item active"></a> -->
       {{ end }}
     {{ end }}
-    
+    {{ $currentPage := .Page }}
+    {{ range .Site.Taxonomies.categories }}
+    {{ $url := $currentPage.RelPermalink }}
+    <a class="sidebar-nav-item category
+    {{ if eq $url .Page.RelPermalink }}
+    active
+    {{ end }}
+    " href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a>
+    {{ end }}
     </nav>
   </div>
 </div>
