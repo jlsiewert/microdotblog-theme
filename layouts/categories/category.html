@@ -1,0 +1,8 @@
+{{ define "main" }}
+{{ $type := .Title }}
+ {{ if eq ( .Title | lower ) "microblog" }}
+ {{ partial "microlist.html" ( $.Site.Pages ) }}
+ {{ else }}
+ {{ partial "summarylist.html" .Pages }}
+ {{ end }}
+{{ end }}
