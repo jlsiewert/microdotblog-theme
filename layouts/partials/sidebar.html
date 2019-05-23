@@ -8,10 +8,19 @@
       <img class="avatar u-photo" alt="Avatar" src="{{ .Site.Author.avatar | safeURL }}">
       <p class="lead">{{ .Site.Params.description | safeHTML }}</p>
     </div>
-
+{{ $currentPage := . }}
 <nav class="sidebar-nav">
    <a class="sidebar-nav-item{{ if .IsHome }} active{{end}}" href="/">Home</a>
-    {{ $currentPage := . }}
+   {{ $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+    {{ if gt (len $list) 0 }}
+      {{ range $list }}
+        <a class="sidebar-nav-item 
+        {{ if ( eq ( add .Permalink "") ( add ( $currentPage.URL | relLangURL | safeURL ) "" ) )  }}
+        active
+        {{ end }}
+        " href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ end }}
+  {{ end }}
     {{ range .Site.Menus.main }}
       {{ if .Page.Params.redirect_url }}
         <a class="sidebar-nav-item custom 
