@@ -88,6 +88,9 @@ html {
   .sidebar .lead {
     font-size: 1em;
   }
+  .sidebar .avatar {
+    max-height: 2em !important;
+  }
 }
 
 /* Sidebar links */
