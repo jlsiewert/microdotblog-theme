@@ -5,6 +5,7 @@
     --light-text-color: #505050;
     --heavy-text-color: #313131;
     --link-color: #268bd2;
+    --link-hover-color: #1B6193;
     --text-box-background: #f9f9f9;
     --table-line-color:#e5e5e5;
     --sidebar-text-color: #979797;
@@ -19,6 +20,7 @@
         --light-text-color: #B0B0B0;
         --heavy-text-color: #F0F0F0;
         --link-color: #30AFEB;
+        --link-hover-color: #217299;
         --text-box-background: #2E2E2E;
         --table-line-color:#CCCCCC;
         --sidebar-text-color: #979797;
