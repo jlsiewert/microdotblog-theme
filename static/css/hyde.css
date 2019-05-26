@@ -352,14 +352,19 @@ div.content.container .photo-grid {
   max-width: 100%;
 }
 
+.content .photo-grid.h-feed {
+  max-width: 100%;
+}
+
 .photo-grid {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .photo-grid .photo {
-  margin: 2em;
+  margin: 1em 0;
   position: relative;
 }
 
