@@ -342,3 +342,49 @@ a .social .social-icon:focus {
   fill: var(--link-hover-color)
   /*color: var(--link-hover-color);*/
 }
+
+/* Photo-grid */
+div.content.container .photo-grid {
+  max-width: 100%;
+}
+
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.photo-grid .photo {
+  margin: 2em;
+  position: relative;
+}
+
+.photo-grid .photo img {
+  max-height: 20em;
+  flex-grow: 250;
+  width: auto;
+  margin: 0;
+}
+
+.photo-grid .photo .photo-details {
+  display: none;
+  padding: 0.2rem 0.5rem;
+  background-color: rgba(13, 13, 13, 0.61);
+  color: rgb(227, 227, 227);
+left: 0;
+bottom: 0;
+position: absolute;
+width: 100%;
+z-index: 2;
+margin: 0;
+}
+
+.photo-details time {
+ font-style: italic; 
+}
+
+.photo-grid .photo:focus .photo-details,
+.photo-grid .photo:active .photo-details,
+.photo-grid .photo:hover .photo-details {
+  display: block;
+}
