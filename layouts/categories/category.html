@@ -2,6 +2,8 @@
 {{ $type := .Title }}
  {{ if eq ( .Title | lower ) "microblog" }}
  {{ partial "microlist.html" ( $.Site.Pages ) }}
+ {{ else if eq (.Title | lower ) "photo" }}
+ {{ partial "photogrid.html" .Pages }} 
  {{ else }}
  {{ partial "summarylist.html" .Pages }}
  {{ end }}
