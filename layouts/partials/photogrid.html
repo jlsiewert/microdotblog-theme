@@ -1,12 +1,12 @@
 <div class="photos photo-grid h-feed">
 
-{{ range first 20 ( where .Pages ".Params.images" "!=" nil ) }}
+{{ range first 20 ( where . ".Params.images" "!=" nil ) }}
     <div class="h-entry photo">
         <a href="{{ .Params.url }}">
             <img src="{{ ( index .Params.images 0 ) }}">
             <div class="photo-details">
                 <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "2 Jan 2006" }}</time>
-                    {{ if eq .Title "" }}
+                    {{ if not ( eq .Title "" ) }}
                     <div class="page-title">
                     {{ .Title }} 
                     {{ else }}
