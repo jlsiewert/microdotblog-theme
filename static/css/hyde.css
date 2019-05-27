@@ -393,3 +393,33 @@ margin: 0;
 .photo-grid .photo:hover .photo-details {
   display: block;
 }
+
+/* Pagination */
+
+ul.pagination {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 20em;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+}
+
+ul.pagination li a {
+  color: var(--heavy-text-color);
+}
+
+ul.pagination li.disabled {
+  display: none;
+}
+
+ul.pagination li.active a {
+  text-decoration: underline;
+}
+
+ul.pagination li {
+  flex-grow: 1;
+}

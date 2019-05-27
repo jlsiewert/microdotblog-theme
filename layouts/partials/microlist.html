@@ -1,6 +1,5 @@
 <div class="posts h-feed">
-{{ $limit := 25 }}
-{{ range first $limit .  }}
+{{ range .Pages  }}
   {{ .Render "micro" }}
 {{ end }}
 

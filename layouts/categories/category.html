@@ -1,10 +1,11 @@
 {{ define "main" }}
 {{ $type := .Title }}
  {{ if eq ( .Title | lower ) "microblog" }}
- {{ partial "microlist.html" ( $.Site.Pages ) }}
+ {{ partial "microlist.html" ( .Paginate ( $.Site.Pages ) ) }}
  {{ else if eq (.Title | lower ) "photo" }}
- {{ partial "photogrid.html" .Pages }} 
+ {{ partial "photogrid.html" ( .Paginate .Pages ) }} 
  {{ else }}
- {{ partial "summarylist.html" .Pages }}
+ {{ partial "summarylist.html" ( .Paginate .Pages ) }}
  {{ end }}
+ {{ template "_internal/pagination.html" . }}
 {{ end }}

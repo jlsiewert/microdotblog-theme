@@ -11,8 +11,7 @@
 	
 	<div class="h-feed">
 
-	{{ $list := (where .Site.Pages "Type" "post") }}
-	{{ range $list }}
+	{{ range (.Paginate (( where .Pages "Type" "post" ).GroupByDate "2006")).PageGroups  }}
 
 		<p class="h-entry">
 			<a href="{{ .Permalink }}" class="u-url"><span class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-0700" }}">{{ .Date.Format "2006-01-02" }}</span></a>:
@@ -23,5 +22,7 @@
 	{{ end }}
 
 	</div>
+
+{{ template "_internal/pagination.html" . }}
 
 {{ end }}
