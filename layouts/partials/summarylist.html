@@ -1,5 +1,5 @@
 <div class="posts h-feed">
-{{ range first 10 . }}
+{{ range .Pages }}
 
   {{ .Render "summary" }}
 

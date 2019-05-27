@@ -1,6 +1,6 @@
 <div class="photos photo-grid h-feed">
 
-{{ range first 20 ( where . ".Params.images" "!=" nil ) }}
+{{ range ( where .Pages ".Params.images" "!=" nil ) }}
     <div class="h-entry photo">
         <a href="{{ .Params.url }}">
             <img src="{{ ( index .Params.images 0 ) }}">
