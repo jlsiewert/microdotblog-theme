@@ -3,7 +3,7 @@
     {{ .Site.Params.intro | safeHTML }}
 </div>
 <div class="posts h-feed">
-{{ $pages := .Paginate $.Site.Taxonomies.categories.blog.Pages.ByDate.Reverse  }}
+{{ $pages := limit $.Site.Taxonomies.categories.blog.Pages 5 }}
 {{ partial "summarylist" $pages }}
 </div>
 {{ end }}
