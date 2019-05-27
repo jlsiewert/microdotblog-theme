@@ -288,8 +288,15 @@ tbody tr:nth-child(odd) th {
  * Center the page content.
  */
 
-.container {
+.container .posts, .container .post {
   max-width: 38rem;
+}
+
+.container .photos {
+  max-width: 100%;
+}
+
+  .container {
   padding-left:  1rem;
   padding-right: 1rem;
   margin-left:  auto;
