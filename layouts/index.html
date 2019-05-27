@@ -3,7 +3,7 @@
     {{ .Site.Params.intro | safeHTML }}
 </div>
 <div class="posts h-feed">
-{{ $pages := limit $.Site.Taxonomies.categories.blog.Pages 5 }}
+{{ $pages := first 5 $.Site.Taxonomies.categories.blog }}
 {{ partial "summarylist" $pages }}
 </div>
 {{ end }}

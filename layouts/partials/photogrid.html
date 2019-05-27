@@ -1,22 +1,25 @@
 <div class="photos photo-grid h-feed">
 
 {{ range ( where .Pages ".Params.images" "!=" nil ) }}
+{{ $post := . }}
+{{ range $post.Params.images }}
     <div class="h-entry photo">
-        <a href="{{ .Params.url }}">
-            <img src="{{ ( index .Params.images 0 ) }}">
+        <a href="{{ $post.Params.url }}">
+            <img src="{{ . }}">
             <div class="photo-details">
-                <time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "2 Jan 2006" }}</time>
-                    {{ if not ( eq .Title "" ) }}
+                <time class="dt-published" datetime="{{ $post.Date.Format "2006-01-02 15:04:05 -0700" }}">{{ $post.Date.Format "2 Jan 2006" }}</time>
+                    {{ if not ( eq $post.Title "" ) }}
                     <div class="page-title">
-                    {{ .Title }} 
+                    {{ $post.Title }} 
                     {{ else }}
                     <div class="e-content">
-                    {{ .Plain }}
+                    {{ $post.Plain }}
                     {{ end }}
                 </div>
             </div>
         </a>
     </div>
+{{ end }}
 {{ end }}
 
 </div>
