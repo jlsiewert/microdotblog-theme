@@ -3,7 +3,7 @@
     {{ .Site.Params.intro | safeHTML }}
 </div>
 <div class="posts h-feed">
-{{ $pages := first 5 $.Site.Taxonomies.categories.blog }}
-{{ partial "summarylist" $pages }}
+{{ partial "microlist.html" ( .Paginate ( $.Site.Pages ) ) }} 
 </div>
 {{ end }}
+
