@@ -31,7 +31,7 @@
  * Update the foundational and global aspects of the page.
  */
 
-@media (min-width: 48em) {
+ @media (min-width: 48em) {
   html {
     font-size: 16px;
   }
@@ -294,55 +294,15 @@ a.sidebar-nav-item:focus {
 }
 
 #post-nav {
-  padding-top: 25px;
+	padding-top: 25px;
 }
 
 #post-nav .prev {
-  padding-right: 10px;
+	padding-right: 10px;
 }
 
 video {
-  max-width: 100%;
-}
-
-/* Social icons */
-.social-list {
-  display: grid;
-  text-align: center;
-  grid-template-columns: repeat(auto-fill, minmax(7em, 1fr));
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
-  align-items: end;
-}
-
-div.social {
-  max-width: 5em;
-}
-
-.social .social-name {
-  text-align: center;
-  margin: auto;
-}
-
-.social .social-icon {
-  fill: var(--link-color);
-  /*color: var(--link-color);*/
-  transition: fill .2s ease-in-out;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-}
-
-svg.social-icon {
-  margin: auto;
-}
-
-/* `:focus` is linked to `:hover` for basic accessibility */
-a .social .social-icon:hover,
-a .social .social-icon:focus {
-  /*text-decoration: underline;*/
-  fill: var(--link-hover-color)
-  /*color: var(--link-hover-color);*/
+	max-width: 100%;
 }
 
 /* Photo-grid */
@@ -428,4 +388,83 @@ ul.pagination li.active a {
 
 ul.pagination li {
   flex-grow: 1;
+}
+
+/* Micro.blog */
+.micropost img {
+  max-height: 15em;
+  width: auto;
+}
+
+.social-list {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.social-list {
+  list-style: none;
+}
+
+.social-list li {
+  margin-top: 1em;
+  text-align: center;
+  padding: 1em;
+}
+
+.social-list a::before {
+  content: "";
+  display: block;
+  margin: auto;
+  background-color: var(--link-color);
+  height: 4em;
+  width: 4em;
+  transition: background-color .2s ease-in-out;
+  mask-image: url("/images/social-icons/default.svg");
+  -webkit-mask-image: url("/images/social-icons/default.svg");
+  mask-size: auto 4em;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: auto 4em;
+  -webkit-mask-repeat: no-repeat;
+}
+
+.social-list a:hover::before {
+  background-color: var(--link-hover-color);
+}
+
+.social-list .microblog a::before {
+  mask-image: url("/images/social-icons/microblog.svg");
+  -webkit-mask-image: url("/images/social-icons/microblog.svg");
+}
+
+.social-list .stackoverflow a::before {
+  mask-image: url("/images/social-icons/stackoverflow.svg");
+  -webkit-mask-image: url("/images/social-icons/stackoverflow.svg");
+}
+
+.social-list .github a::before {
+  mask-image: url("/images/social-icons/github.svg");
+  -webkit-mask-image: url("/images/social-icons/github.svg");
+}
+
+.social-list .twitter a::before {
+  mask-image: url("/images/social-icons/twitter.svg");
+  -webkit-mask-image: url("/images/social-icons/twitter.svg");
+}
+
+.social-list .linkedin a::before {
+  mask-image: url("/images/social-icons/linkedin.svg");
+  -webkit-mask-image: url("/images/social-icons/linkedin.svg");
+}
+
+.social-list .xing a::before {
+  mask-image: url("/images/social-icons/xing.svg");
+  -webkit-mask-image: url("/images/social-icons/xing.svg");
+}
+
+.social-list .orcid a::before {
+  mask-image: url("/images/social-icons/orcid.svg");
+  -webkit-mask-image: url("/images/social-icons/orcid.svg");
 }

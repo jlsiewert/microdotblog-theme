@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="twitter" x="0.104" y="0.318" width="24" height="24" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect x="0.104" y="0.318" width="24" height="24"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <g id="twitter1" serif:id="twitter">
+            <g>
+                <path d="M8.687,22.005c8.996,-0 13.914,-7.453 13.914,-13.915c0,-0.212 -0.004,-0.423 -0.014,-0.633c0.954,-0.691 1.785,-1.552 2.439,-2.533c-0.877,0.389 -1.82,0.652 -2.809,0.77c1.009,-0.606 1.784,-1.564 2.15,-2.705c-0.946,0.56 -1.992,0.967 -3.106,1.187c-0.893,-0.951 -2.164,-1.546 -3.57,-1.546c-2.701,0 -4.892,2.19 -4.892,4.89c0,0.383 0.043,0.757 0.127,1.115c-4.065,-0.205 -7.67,-2.151 -10.081,-5.11c-0.421,0.723 -0.663,1.563 -0.663,2.459c0,1.696 0.863,3.194 2.176,4.07c-0.803,-0.025 -1.557,-0.245 -2.216,-0.612c-0,0.02 -0,0.04 -0,0.063c-0,2.367 1.685,4.346 3.923,4.793c-0.411,0.112 -0.844,0.172 -1.29,0.172c-0.315,0 -0.622,-0.031 -0.92,-0.088c0.622,1.943 2.428,3.357 4.568,3.396c-1.674,1.312 -3.783,2.093 -6.074,2.093c-0.395,0 -0.784,-0.023 -1.167,-0.068c2.163,1.387 4.734,2.197 7.496,2.197" style="fill-rule:nonzero;"/>
+            </g>
+        </g>
+    </g>
+</svg>

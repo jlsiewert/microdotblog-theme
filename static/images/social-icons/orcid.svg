@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="orcid" x="0.104" y="0.318" width="24" height="24" style="fill:none;"/>
+    <g id="orcid1" serif:id="orcid">
+        <path d="M12.104,0.318c6.622,-0 12,5.377 12,12c-0,6.622 -5.378,12 -12,12c-6.624,-0 -12,-5.378 -12,-12c-0,-6.624 5.377,-12 12,-12Zm-1.791,7.415l3.9,0c3.713,0 5.344,2.653 5.344,5.025c-0,2.578 -2.016,5.025 -5.325,5.025l-3.919,0l0,-10.05Zm-2.119,10.041l-1.443,-0l-0,-10.041l1.443,0l0,10.041Zm3.563,-1.294l2.297,0c3.272,0 4.022,-2.484 4.022,-3.722c-0,-2.015 -1.285,-3.722 -4.097,-3.722l-2.222,0l-0,7.444Zm-3.338,-10.837c0,0.515 -0.421,0.946 -0.946,0.946c-0.525,0 -0.947,-0.431 -0.947,-0.946c-0,-0.525 0.422,-0.947 0.947,-0.947c0.525,-0 0.946,0.431 0.946,0.947Z"/>
+    </g>
+</svg>
