@@ -2,7 +2,7 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about h-card">
       <h1>
-          <span class="p-name">{{ .Site.Title }}
+          <span class="p-name">{{ .Site.Title }}</span>
       </h1>
       <p class="info">{{ .Site.Params.info | safeHTML }} </p>
       <img class="avatar u-photo" alt="Avatar" src="{{ .Site.Author.avatar | safeURL }}">
@@ -30,7 +30,7 @@
       {{ else }}
         {{ $url := .URL | relLangURL }}
           <a class="sidebar-nav-item {{ $currentPage.RelPermalink }} {{ $url }}
-        {{ if ( eq ( add $url "") ( add ( $currentPage.URL | relLangURL | safeURL ) "" ) )  or ( $currentPage.IsMenuCurrent "main" . ) }}
+        {{ if $currentPage.IsMenuCurrent "main" . }}
         active
         {{ end }}
         " href="{{ $url }}">{{ .Name }}</a>

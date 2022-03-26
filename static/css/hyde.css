@@ -396,25 +396,25 @@ ul.pagination li {
   width: auto;
 }
 
-.social-list {
+
+ul.social {
   display: flex;
   align-items: flex-end;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-}
-
-.social-list {
   list-style: none;
+  gap: 2em;
+  padding: 0;
 }
 
-.social-list li {
-  margin-top: 1em;
+ul.social li {
   text-align: center;
-  padding: 1em;
+  min-height: 4em;
+  min-width: 7.5em;
 }
 
-.social-list a::before {
+ul.social li a::before {
   content: "";
   display: block;
   margin: auto;
@@ -423,48 +423,39 @@ ul.pagination li {
   width: 4em;
   transition: background-color .2s ease-in-out;
   mask-image: url("/images/social-icons/default.svg");
-  -webkit-mask-image: url("/images/social-icons/default.svg");
   mask-size: auto 4em;
   mask-repeat: no-repeat;
-  -webkit-mask-size: auto 4em;
-  -webkit-mask-repeat: no-repeat;
 }
 
-.social-list a:hover::before {
+ul.social li a:hover::before {
   background-color: var(--link-hover-color);
 }
 
-.social-list .microblog a::before {
+ul.social li.microblog a::before {
   mask-image: url("/images/social-icons/microblog.svg");
-  -webkit-mask-image: url("/images/social-icons/microblog.svg");
 }
 
-.social-list .stackoverflow a::before {
+ul.social li.stackoverflow a::before {
   mask-image: url("/images/social-icons/stackoverflow.svg");
-  -webkit-mask-image: url("/images/social-icons/stackoverflow.svg");
 }
 
-.social-list .github a::before {
+ul.social li.github a::before {
   mask-image: url("/images/social-icons/github.svg");
-  -webkit-mask-image: url("/images/social-icons/github.svg");
 }
 
-.social-list .twitter a::before {
+ul.social li.twitter a::before {
   mask-image: url("/images/social-icons/twitter.svg");
-  -webkit-mask-image: url("/images/social-icons/twitter.svg");
 }
 
-.social-list .linkedin a::before {
+ul.social li.linkedin a::before {
   mask-image: url("/images/social-icons/linkedin.svg");
-  -webkit-mask-image: url("/images/social-icons/linkedin.svg");
 }
 
-.social-list .xing a::before {
+ul.social li.xing a::before {
   mask-image: url("/images/social-icons/xing.svg");
-  -webkit-mask-image: url("/images/social-icons/xing.svg");
 }
 
-.social-list .orcid a::before {
+ul.social li.orcid a::before {
   mask-image: url("/images/social-icons/orcid.svg");
-  -webkit-mask-image: url("/images/social-icons/orcid.svg");
+
 }
