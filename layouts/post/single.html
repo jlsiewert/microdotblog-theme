@@ -1,9 +1,14 @@
 {{ define "main" }}
 <div class="post h-entry">
   {{ if .Title }}
-    {{ with .Title | markdownify }}
-    <h1 class="page-title p-name {{ cond (hasPrefix . "<a") "external" "" }}">{{ . }}</h1>
-  {{ end }}
+  {{ with .Title | markdownify }}
+    {{ if hasPrefix . "<a" }}
+    <h1 class="page-title p-name link">{{ . }}</h1>
+    {{ else }}
+    <h1 class="page-title p-name">{{ . }}</h1>
+     {{ end }}
+{{ end }}
+{{ end }}
   <span class="post-date"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "2 Jan 2006" }}</time></span>
   <div class="e-content">
   {{ .Content }}

@@ -457,5 +457,12 @@ ul.social li.xing a::before {
 
 ul.social li.orcid a::before {
   mask-image: url("/images/social-icons/orcid.svg");
+}
 
+.page-title.link {
+	text-decoration: underline;
+}
+
+.page-title.link a::before {
+	content: "»";
 }
