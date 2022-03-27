@@ -3,7 +3,12 @@
  {{ if eq ( .Title | lower ) "microblog" }}
  {{ partial "microlist.html" ( .Paginate ( $.Site.Pages ) ) }}
  {{ else if eq (.Title | lower ) "photo" }}
- {{ partial "photogrid.html" ( .Paginate .Pages ) }} 
+	<div class="photos photo-grid h-feed">
+	{{ $page := .Paginate .Pages }}
+	{{ range ( $page.Pages ) }}
+		 {{ partial "photogrid.html" . }} 
+	{{ end }}
+	</div>
  {{ else }}
  {{ partial "summarylist.html" ( .Paginate .Pages ) }}
  {{ end }}
