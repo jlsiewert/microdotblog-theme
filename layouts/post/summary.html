@@ -1,26 +1,31 @@
 <div class="post">
   <a href="{{ .Permalink }}" class="post-date u-url"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "2 January 2006" }}</time></a>
-  {{ if .Truncated }}
-     <a href="{{ .Permalink }}">
-	<h1 class="page-title p-name">{{ .Title | markdownify | plainify }}</h1>
-     </a>
-  {{ else }}
   {{ if .Title }}
-    {{ with .Title | markdownify }}
-  		{{ if hasPrefix . "<a" }}
-  		<h1 class="page-title p-name link">{{ . }}</h1>
-  		{{ else }}
-  		<h1 class="page-title p-name">{{ . }}</h1>
-     	{{ end }}
-	{{ end }}
-  {{ end }}
-{{ end }}
-  <div class="e-content">
-  {{ if .Truncated }}
-    {{ .Summary }}
-    <p class="link more"><a class="more" href="{{ .RelPermalink }}">Read More</a></p>
+    {{ $title := .Title | markdownify }}
+    {{ if hasPrefix $title "<a" }}
+      <h1 class="page-title p-name link">{{ $title }}</h1>
+      <div class="e-content">
+        {{ .Content }}
+      </div>
+    {{ else }}
+      <h1 class="page-title p-name">{{ $title }}</h1>
+      <div class="e-content">
+        {{ if .Truncated }}
+          {{ .Summary }}
+          <p class="link more"><a class="more" href="{{ .RelPermalink }}">Read More</a></p>
+        {{ else }}
+          {{ .Content }}
+        {{ end }}
+      </div>
+    {{ end }}
   {{ else }}
-    {{ .Content }}
+    <div class="e-content">
+      {{ if .Truncated }}
+        {{ .Summary }}
+        <p class="link more"><a class="more" href="{{ .RelPermalink }}">Read More</a></p>
+      {{ else }}
+        {{ .Content }}
+      {{ end }}
+    </div>
   {{ end }}
-</div>
 </div>

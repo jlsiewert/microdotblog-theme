@@ -10,7 +10,7 @@
     {{ if .IsHome }}
       {{ .Site.Title }}
     {{ else }}
-      {{ .Site.Title }} · {{ .Title }}
+      {{ .Site.Title }} · {{ .Title | markdownify | plainify }}
     {{ end }}
   </title>
 
