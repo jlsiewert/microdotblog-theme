@@ -2,7 +2,7 @@
 {{ range $post.Params.images }}
     <div class="h-entry photo">
         <a href="{{ $post.Params.url }}">
-            <img src="{{ . }}" alt="">
+            <img src="{{ . }}" alt="" loading="lazy">
             <div class="photo-details">
                 <time class="dt-published" datetime="{{ $post.Date.Format "2006-01-02 15:04:05 -0700" }}">{{ $post.Date.Format "2 Jan 2006" }}</time>
                     {{ if not ( eq $post.Title "" ) }}

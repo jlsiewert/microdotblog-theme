@@ -1,0 +1,11 @@
+{{ define "main" }}
+	<div class="photos photo-grid h-feed">
+    {{ $emptyTitle:= where .Site.Pages "Title" "" }}
+    {{ $category:= (index .Site.Taxonomies "photo").Pages }}
+	{{  range sort (union $emptyTitle $category) "Date" "desc" }}
+		{{ partial "photogrid.html" . }}
+	{{ end }}
+
+</div>
+
+{{ end }}
