@@ -1,11 +1,14 @@
-{{ define "main" }}
-	<div class="photos photo-grid h-feed">
-    {{ $emptyTitle:= where .Site.Pages "Title" "" }}
-    {{ $category:= (index .Site.Taxonomies "photo").Pages }}
-	{{  range sort (union $emptyTitle $category) "Date" "desc" }}
-		{{ partial "photogrid.html" . }}
-	{{ end }}
+{{ $pages = .Site.Pages  }}
 
-</div>
+{{ if (ne site.Params.included_categories "") }}
+{{/* If the user has updated the setting to only include
+  certain categories, we fetch the option, split the string and
+  trim whitespace from each category.
+*/}}
 
+{{ $categories := (split site.Params.included_categories ",") }}
+{{ $trimmed_categories := apply $categories "trim" "." " " }}
+{{- $pages = where . ".Params.categories" "intersect" $trimmed_categories -}}
 {{ end }}
+
+{{ partial "photolist.html" $pages }}

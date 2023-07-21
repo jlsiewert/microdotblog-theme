@@ -3,7 +3,11 @@
     {{ .Site.Params.intro | safeHTML }}
 </div>
 <div class="posts h-feed">
-{{ partial "summarylist.html" ( .Paginate ( $.Site.Pages ) ) }} 
+    {{ $p := where site.RegularPages "Type" "posts" }}
+    {{ $p = where $p "Params.categories" "intersect" (slice "photo") }}
+
+    {{ partial "photolist.html" (.Paginate $p).Pages }} 
 </div>
+{{ template "_internal/pagination.html" . }}
 {{ end }}
 
