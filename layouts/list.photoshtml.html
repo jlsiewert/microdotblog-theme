@@ -1,4 +1,4 @@
-{{ $pages := site.RegularPages  }}
+{{ $pages := where site.Pages "Kind" "post"  }}
 
 {{ if (ne site.Params.included_categories "") }}
 {{/* If the user has updated the setting to only include
