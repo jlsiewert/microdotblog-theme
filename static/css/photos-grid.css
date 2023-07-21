@@ -1,3 +1,7 @@
+#home {
+  max-width: unset;
+}
+
 .photos-grid * {
     box-sizing: border-box;
   }
