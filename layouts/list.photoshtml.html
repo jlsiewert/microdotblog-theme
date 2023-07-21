@@ -1,3 +1,9 @@
+{{ define "main" }}
+<div class="intro">
+    {{ .Site.Params.intro | safeHTML }}
+</div>
+<div id="home" class="home posts h-feed">
+
 {{ $pages := where site.Pages "Kind" "post"  }}
 
 {{ if (ne site.Params.included_categories "") }}
@@ -12,3 +18,7 @@
 {{ end }}
 
 {{ partial "photolist.html" $pages }}
+
+</div>
+
+{{ end }}
