@@ -79,6 +79,10 @@ a code {
   .sidebar .lead {
     font-size: 1em;
   }
+  .sidebar-nav {
+    gap: 1em !important;
+    flex-direction: row !important;
+  }
 }
 
 @media (max-height: 35em) {
@@ -116,6 +120,11 @@ a code {
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0em;
+    width: 100%;
+    justify-content: space-between;
 }
 .sidebar-nav-item {
   display: block;
