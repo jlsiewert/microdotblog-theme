@@ -8,7 +8,7 @@
 
 {{ $categories := (split site.Params.included_categories ",") }}
 {{ $trimmed_categories := apply $categories "trim" "." " " }}
-{{- $pages = where . ".Params.categories" "intersect" $trimmed_categories -}}
+{{- $pages = where $pages ".Params.categories" "intersect" $trimmed_categories -}}
 {{ end }}
 
 {{ partial "photolist.html" $pages }}
