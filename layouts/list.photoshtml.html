@@ -17,7 +17,7 @@
 {{- $pages = where $pages ".Params.categories" "intersect" $trimmed_categories -}}
 {{ end }}
 
-{{ partial "photolist.html" $pages }}
+{{ partial "photolist.html" ( dict "Pages" $pages "Grid_Style" "grid" "Show_all_photos" true ) }}
 
 </div>
 

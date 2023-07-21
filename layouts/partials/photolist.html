@@ -1,6 +1,5 @@
 
-  {{- $should_show_all_photos := site.Params.show_all_photos -}}
-  {{- $photos_grid_style := site.Params.photos_grid_style -}}
+
   {{- $masonry_columns_count := 3 }}
 
   {{ $photos := slice }}
@@ -9,14 +8,15 @@
     so we set the intial value of our $pages array.
   */}}
 
-  {{ $pages := . }}
+  {{ $pages := .Pages }}
+  {{ $show_all_photos := .Show_all_photos}}
 
   {{/* We then proceed to list all the photos from the pages. */}}
 
   {{- $list := where $pages ".Params.photos_with_metadata" "!=" nil -}}
   {{ range $index, $value := $list }}
     {{- $post_url := .Permalink -}}
-    {{- $post_photos := cond $should_show_all_photos .Params.photos_with_metadata (first 1 .Params.photos_with_metadata) -}}
+    {{- $post_photos := cond $show_all_photos .Params.photos_with_metadata (first 1 .Params.photos_with_metadata) -}}
     {{ range $post_photo := $post_photos }}
       {{- $photo_with_post_url := merge $post_photo (dict "post_url" $post_url) -}}
       {{- $photos = $photos | append $photo_with_post_url -}}
@@ -27,7 +27,7 @@
     style the user has chosen.
   */}}
 
-  {{ if (eq $photos_grid_style "grid") }}
+  {{ if (eq .Grid_Style "grid") }}
     <div class="photos-grid photos-grid--style-grid">
       {{ range $photos }}
         <a href="{{ .post_url }}" class="photos-grid__item">
@@ -41,13 +41,13 @@
         </a>
       {{ end }}
     </div>
-  {{ else if (eq $photos_grid_style "masonry") }}
+  {{ else if (eq .Grid_Style "masonry") }}
 
     {{ partial "masonry.html" (dict "columns" 3 "photos" $photos "class" "photos-grid--visible-desktop") }}
 
     {{ partial "masonry.html" (dict "columns" 1 "photos" $photos "class" "photos-grid--visible-mobile") }}
 
   {{ else }}
-    <p>The grid style "{{ $photos_grid_style }}" is not supported.</p>
+    <p>The grid style "{{ .Grid_Style }}" is not supported.</p>
   {{ end }}
 

@@ -3,9 +3,11 @@
     {{ .Site.Params.intro | safeHTML }}
 </div>
 <div id="home" class="home posts h-feed">
+    {{- $should_show_all_photos := site.Params.show_all_photos -}}
+    {{- $photos_grid_style := site.Params.photos_grid_style -}}
     {{ $p := (where .Site.Pages "Type" "post") }}
     {{ $p := where $p ".Params.categories" "intersect" (slice "Photo") }}
-    {{ partial "photolist.html" $p }} 
+    {{ partial "photolist.html" ( dict "Pages" $p "Grid_Style" $photos_grid_style "Show_all_photos" $should_show_all_photos ) }} 
 </div>
 {{ end }}
 
