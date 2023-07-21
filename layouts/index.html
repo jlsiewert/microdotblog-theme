@@ -5,8 +5,7 @@
 <div id="home" class="home posts h-feed">
     {{ $p := (where .Site.Pages "Type" "post") }}
     {{ $p := where $p ".Params.categories" "intersect" (slice "Photo") }}
-    {{ partial "photolist.html" (.Paginate $p 24).Pages }} 
-    {{ template "_internal/pagination.html" . }}
+    {{ partial "photolist.html" $p }} 
 </div>
 {{ end }}
 
