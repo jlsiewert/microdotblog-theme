@@ -495,9 +495,10 @@ ul.social li.pixelfed a::before {
 }
 
 .sidebar-about ul.social li {
-  text-align: center;
-  min-height: 2em;
+  width: 2em;
   min-width: 2em;
+  height: 2em;
+  min-height: 2em;
 }
 
 ul.social li a::before {
@@ -513,11 +514,11 @@ ul.social li a::before {
 
 .sidebar-about ul.social li a::before {
   visibility:visible;
-  color: var(--sidebar-link-color);
+  background-color: var(--sidebar-link-color);
 }
 
 .sidebar-about ul.social li a:hover::before {
-  color: var(--sidebar-text-color);
+  background-color: var(--sidebar-text-color);
 }
 
 .page-title.link a {
