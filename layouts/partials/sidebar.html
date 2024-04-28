@@ -6,7 +6,22 @@
       </h1>
       <p class="info">{{ .Site.Params.info | safeHTML }} </p>
       <img class="avatar u-photo" alt="Avatar" src="{{ .Site.Author.avatar | safeURL }}">
-      <p class="lead">{{ .Site.Params.description | safeHTML }}</p>
+      <p class="lead">
+        <p class="description">
+          {{ .Site.Params.description | safeHTML }}
+        </p>
+        <ul class="social">
+          {{ with .Site.Params.microblog_username }}
+            <li class="microblog"><a target="_blank" rel="me noreferrer external" href="https://micro.blog/{{ . }}">Micro.Blog</a></li>
+          {{ end }}
+          {{ with .Site.Params.mastodon_username }}
+            <li class="mastodon"><a target="_blank" rel="me noreferrer external" href="{{ . }}">Mastodon</a></li>
+          {{ end }}
+          {{ with .Site.Params.pixelfed_username }}
+            <li class="pixelfed"><a target="_blank" rel="me noreferrer external" href="{{ . }}">Pixelfed</a></li>
+          {{ end }}
+        </ul>
+        </p>
     </div>
 {{ $currentPage := . }}
 <nav class="sidebar-nav">

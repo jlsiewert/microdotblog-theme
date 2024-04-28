@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,0,-200)">
+        <g id="github">
+        </g>
+        <g id="linkedin">
+        </g>
+        <g id="microblog">
+        </g>
+        <g id="orcid">
+        </g>
+        <g id="default">
+        </g>
+        <g id="stackoverflow">
+        </g>
+        <g id="twitter">
+        </g>
+        <g id="xing">
+        </g>
+        <g id="github1" serif:id="github">
+        </g>
+        <g id="linkedin1" serif:id="linkedin">
+        </g>
+        <g id="microblog1" serif:id="microblog">
+        </g>
+        <g id="orcid1" serif:id="orcid">
+        </g>
+        <g id="default1" serif:id="default">
+        </g>
+        <g id="stackoverflow1" serif:id="stackoverflow">
+        </g>
+        <g id="twitter1" serif:id="twitter">
+        </g>
+        <g transform="matrix(0.0282353,0,0,0.0282353,-2.11765,195.031)">
+            <g id="pixelfed">
+                <g>
+                    <path d="M500,176C423.333,176 351.667,195.333 285,234C221,272 170.333,323 133,387C94.333,453 75,524.5 75,601.5C75,678.5 94.333,750 133,816C170.333,880 221,930.667 285,968C351.667,1006.67 423.333,1026 500,1026C576.667,1026 648.333,1006.67 715,968C779,930.667 829.667,880 867,816C905.667,750 925,678.5 925,601.5C925,524.5 905.667,453 867,387C829.667,323 779,272 715,234C648.333,195.333 576.667,176 500,176ZM432,435L544,435C568,435 590.167,440.833 610.5,452.5C630.833,464.167 647,479.833 659,499.5C671,519.167 677,540.833 677,564.5C677,588.167 671,609.833 659,629.5C647,649.167 630.833,664.833 610.5,676.5C590.167,688.167 568,694 544,694L466,694L355,800L355,510C355,489.333 362.5,471.667 377.5,457C392.5,442.333 410.667,435 432,435Z" style="fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+        <g id="xing1" serif:id="xing">
+        </g>
+    </g>
+</svg>

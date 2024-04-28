@@ -472,6 +472,15 @@ ul.social li.orcid a::before {
   mask-image: url("/images/social-icons/orcid.svg");
 }
 
+ul.social li.pixelfed a::before {
+  mask-image: url("/images/social-icons/pixelfed.svg");
+}
+
+/* Hide link tag in sidebar */
+.sidebar-about ul.social li a {
+  visibility: hidden;
+}
+
 .page-title.link a {
 	text-decoration: underline;
 }
