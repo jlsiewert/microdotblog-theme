@@ -52,14 +52,14 @@
 		},
 		"LocalXML": {
 			"mediaType": "application/rss+xml",
-            "baseName: "local",
-             "isPlainText": true
+            "baseName": "local",
+            "isPlainText": true
 		},
 		"LocalJSON": {
 			"mediaType": "application/json",
              "baseName": "local",
               "isPlainText": true
-		},
+		}
 	},
 	"outputs": {
 		"home": [ "HTML", "RSS", "JSON", "RSD", "ArchiveJSON", "PhotosJSON", "PodcastXML", "PodcastJSON", "LocalJSON", "LocalXML" ],
@@ -101,7 +101,10 @@
 		"theme_seconds": "0",
 		"plugins_css": [],
 		"plugins_js": [],
-		"plugins_html": []
+		"plugins_html": [],
+		"photos_grid_style": "masonry",
+		"included_categories": "photo",
+		"show_all_photos": false
 	},
 	"markup":  {
 		"defaultMarkdownHandler": "goldmark",
@@ -126,7 +129,7 @@
 			},
 			"renderer": {
 				"hardWraps": false,
-				"unsafe": false,
+				"unsafe": true,
 				"xhtml": false
 			}
 		}

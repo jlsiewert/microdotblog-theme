@@ -79,6 +79,10 @@ a code {
   .sidebar .lead {
     font-size: 1em;
   }
+  .sidebar-nav {
+    gap: 1em !important;
+    flex-direction: row !important;
+  }
 }
 
 @media (max-height: 35em) {
@@ -116,6 +120,11 @@ a code {
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0em;
+    width: 100%;
+    justify-content: space-between;
 }
 .sidebar-nav-item {
   display: block;
@@ -458,6 +467,10 @@ ul.social li.github a::before {
 
 ul.social li.twitter a::before {
   mask-image: url("/images/social-icons/twitter.svg");
+}
+
+ul.social li.mastodon a::before {
+  mask-image: url("/images/social-icons/mastodon.svg");
 }
 
 ul.social li.linkedin a::before {
